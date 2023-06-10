@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n,sum=0;
+    for(n>+1000;n<=2000;n++){
+     if((n%7==0)&&(n%5!=0))
+     sum=sum+n;
+    }
+    cout<<"the sum of numbers btw 1000 and 2000 within the condition divisible by 7 but not by 5 are\n";
+    cout << sum;
+    return 0;
+}
