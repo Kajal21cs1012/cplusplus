@@ -1,0 +1,92 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Point {
+public:
+    double x, y;
+
+    Point(double x = 0.0, double y = 0.0) : x(x), y(y) {}
+};
+
+class Triangle {
+private:
+    Point pointA;
+    Point pointB;
+    Point pointC;
+
+public:
+    Triangle(Point pointA, Point pointB, Point pointC)
+        : pointA(pointA), pointB(pointB), pointC(pointC) {}
+
+    double calculateDistance(Point p1, Point p2) {
+        double dx = p2.x - p1.x;
+        double dy = p2.y - p1.y;
+        return std::sqrt(dx * dx + dy * dy);
+    }
+
+    double calculateSideA() {
+        return calculateDistance(pointB, pointC);
+    }
+
+    double calculateSideB() {
+        return calculateDistance(pointA, pointC);
+    }
+
+    double calculateSideC() {
+        return calculateDistance(pointA, pointB);
+    }
+
+    double calculateArea() {
+        double sideA = calculateSideA();
+        double sideB = calculateSideB();
+        double sideC = calculateSideC();
+
+        double s = (sideA + sideB + sideC) / 2.0;
+        return sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
+    }
+
+    double calculatePerimeter() {
+        double sideA = calculateSideA();
+        double sideB = calculateSideB();
+        double sideC = calculateSideC();
+
+        return sideA + sideB + sideC;
+    }
+
+    std::string classifyTriangle() {
+        double sideA = calculateSideA();
+        double sideB = calculateSideB();
+        double sideC = calculateSideC();
+
+        if (sideA == sideB && sideB == sideC) {
+            return "Equilateral";
+        } else if (sideA == sideB || sideB == sideC || sideA == sideC) {
+            return "Isosceles";
+        } else if (pow(sideA, 2) == pow(sideB, 2) + pow(sideC, 2) ||
+                   pow(sideB, 2) == pow(sideA, 2) + pow(sideC, 2) ||
+                   pow(sideC, 2) == pow(sideA, 2) + pow(sideB, 2)) {
+            return "Right angled";
+        } else {
+            return "Scalene";
+        }
+    }
+};
+
+int main() {
+//calculate area and type of triangle
+    Point pointA(0.0, 0.0);
+    Point pointB(4.0, 0.0);
+    Point pointC(2.0, 3.0);
+
+    Triangle triangle(pointA, pointB, pointC);
+
+    double area = triangle.calculateArea();
+    double perimeter = triangle.calculatePerimeter();
+    string classification = triangle.classifyTriangle();
+
+    cout << "Area: " << area << endl;
+    cout << "Perimeter: " << perimeter << endl;
+    cout << "Classification: " << classification << endl;
+    return 0;
+}
