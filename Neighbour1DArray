@@ -1,0 +1,13 @@
+#include <iostream>
+int bigger(int A[],int size){
+    for(int i=0;i<size;i++){
+        if((A[i]>A[i+1])&&(A[i]>A[i-1]))
+        return A[i];
+    }
+}
+int main() {
+    //  the bigger elemenst in neighbous
+    int A[]={10,5,7,18,6};
+   int size=sizeof(A)/sizeof(int);
+    std::cout << bigger(A,size);
+}
