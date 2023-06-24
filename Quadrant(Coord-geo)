@@ -1,0 +1,61 @@
+#include <iostream>
+#include <cmath>
+
+class Point {
+private:
+    double x;
+    double y;
+
+public:
+    Point(double xCoord, double yCoord) {
+        x = xCoord;
+        y = yCoord;
+    }
+
+    double distanceFromOrigin() {
+        return std::sqrt(x * x + y * y);
+    }
+
+    void displayQuadrant() {
+        if (x > 0 && y > 0)
+            std::cout << "1st quadrant" << std::endl;
+        else if (x < 0 && y > 0)
+            std::cout << "2nd quadrant" << std::endl;
+        else if (x < 0 && y < 0)
+            std::cout << "3rd quadrant" << std::endl;
+        else if (x > 0 && y < 0)
+            std::cout << "4th quadrant" << std::endl;
+        else
+            std::cout << "Origin (0,0)" << std::endl;
+    }
+};
+int main() {
+//distance from origin and check quadrant
+    // Example usage
+    Point p(3.5, 2.8);
+    std::cout << "Distance from origin: " << p.distanceFromOrigin() << std::endl;
+    p.displayQuadrant();
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
