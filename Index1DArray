@@ -1,0 +1,12 @@
+#include <iostream>
+int indexf(int A[],int size,int value){
+    for(int i=0;i<size;i++)
+        if(A[i]==value)
+        return i;
+    }
+int main() {
+    // index of an elemnet
+    int A[]={2,4,6,8,10,12,14};
+   int size=sizeof(A)/sizeof(int);
+    std::cout << indexf(A,size,10);
+}
