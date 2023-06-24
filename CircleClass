@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+class circle
+{
+	public:int x,y,radius;
+	public:void setcentre(int a,int b)
+	{x=a;y=b;}
+	void setradius(int r)
+	{radius=r;}
+	float area()
+	{return 3.14*radius*radius;}
+	float circum()
+	{return 2*3.14*radius;}
+};
+
+int main() {
+//area and circumfrence of circle
+	circle obj1;
+	obj1.setcentre(0,1);
+	obj1.setradius(5);
+	cout<<"area:"<<obj1.area()<<endl;
+	cout<<"circum:"<<obj1.circum();
+	return 0;
+}
