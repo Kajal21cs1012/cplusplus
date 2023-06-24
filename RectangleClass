@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class rectangle
+ {
+    public : int x1,y1,x2,y2;
+};
+float area(rectangle a1)
+ {
+    return sqrt(pow(a1.x1-a1.x2,2)*pow(a1.y1-a1.y2,2));
+ }
+ float perimeter(rectangle a1) {
+    return 2*sqrt(pow(a1.x1-a1.x2,2)+pow(a1.y1-a1.y2,2));
+}
+ int main()
+{ 
+//create a rectangle class with variables of four points and calculate area and perimeter
+
+rectangle a1;
+   a1.x1=10; a1.y1=20;
+   a1.x2=15; a1.y2=5;
+   cout<<area(a1)<<endl;
+   cout<<perimeter(a1);
+ }
