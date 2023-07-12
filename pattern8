@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int i,j,count=1,sign=0;
+   for(i=1;i<7;i++){
+       for(j=1;j<i;j++){
+           if((i+j)%2==1){
+           sign=-1;
+           cout<<sign*count++<<" ";
+       }
+       if((i+j)%2==0){
+       sign=1;
+       cout<<sign*count++<<" ";
+       
+   }
+}cout<<endl;
+}}
+
+//output
+-1 
+2 -3 
+-4 5 -6 
+7 -8 9 -10 
+-11 12 -13 14 -15 
