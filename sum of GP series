@@ -1,0 +1,12 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main(){
+    int n,a=2,r=2,gp=0;
+    cout<<"enter n"<<endl;
+    cin>>n;
+    int s= pow(r,n);
+    int su=a*(s-1);
+    int sum=su/(r-1);
+    cout<<sum;
+    }
