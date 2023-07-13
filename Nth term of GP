@@ -1,0 +1,10 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main(){
+    int n,a=2,r=2;
+    cout<<"enter n";
+    cin>>n;
+    int num=a*pow(r,n-1);
+    cout<<num;
+}
