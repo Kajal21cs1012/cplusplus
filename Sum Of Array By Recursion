@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int sum(int A[],int index){
+    if(index==0)return A[0];
+   return A[index]+sum(A,index-1);
+}
+int main() {
+int A[]={5,10,11,8,6};
+cout<<sum(A,4);
+}
