@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int max1(int A[],int index){
+    if(index==0)return A[0];
+   int temp=max1(A,index-1);
+   if(A[index]>temp)
+   return A[index];
+   else return temp;
+}
+int main() {
+int A[]={5,10,11,8,6};
+cout<<max1(A,4);
+}
